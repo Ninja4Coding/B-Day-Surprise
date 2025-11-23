@@ -157,7 +157,7 @@ function blowOutCandle() {
     candlesBlown++;
 
     if (candlesBlown === totalCandles) {
-        document.getElementById('micStatus').innerText = "Happy Birthday! 🎉";
+        document.getElementById('wish').innerText = "Happy Birthday! 🎉";
         setTimeout(goToFinale, 2000);
     }
 }
