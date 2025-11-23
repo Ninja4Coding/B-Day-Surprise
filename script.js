@@ -130,7 +130,7 @@ async function initMicrophone() {
             }
             let rms = Math.sqrt(sum / bufferLength);
 
-            if (rms > 0.5) {
+            if (rms > 0.3) {
                 blowOutCandle();
             }
 
