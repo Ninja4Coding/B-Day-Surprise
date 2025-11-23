@@ -15,7 +15,8 @@ const overlay = document.getElementById('effect-overlay');
 // --- ATTEMPT AUDIO ON LOAD ---
 window.addEventListener('load', () => {
     alarm.volume = 1;
-    alarm.play().catch(e => console.log("Browser blocked autoplay. Waiting for click."));
+    alarm.play();
+    alarm.play().catch(e => console.log("Browser blocked autoplay."));
 });
 
 // --- PAGE 1 -> 2: FLAME EFFECT ---
@@ -129,7 +130,7 @@ async function initMicrophone() {
             }
             let rms = Math.sqrt(sum / bufferLength);
 
-            if (rms > 0.1) {
+            if (rms > 0.5) {
                 blowOutCandle();
             }
 
@@ -165,7 +166,7 @@ function blowOutCandle() {
 
 // --- STAGE 5 (Finale) ---
 function goToFinale() {
-    finalMusic.volume = 0.5;
+    finalMusic.volume = 1;
     finalMusic.play();
     document.getElementById('page4').classList.add('hidden');
     document.getElementById('page5').classList.remove('hidden');
